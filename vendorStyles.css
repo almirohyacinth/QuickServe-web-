@@ -1,0 +1,430 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #800000;
+  color: #fff;
+  padding: 1rem;
+  align-items: center;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+.button {
+  display: inline-block;
+  margin: 10px;
+  margin-top: 10px;
+  padding: 0.5rem 1rem;
+  color: white;
+  background: #800000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 70px;
+  font-size: medium;
+}
+
+.button:hover {
+  background: #ffcc00;
+}
+
+.nav-buttons {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.notification .bell-icon {
+  font-size: 1.5rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.notification .bell-icon::after {
+  content: '3'; /* Example: Notification count */
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+.notification-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notification {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.notification:last-child {
+  border-bottom: none;
+}
+
+.notification-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.notification .logout-icon {
+  font-size: 1.5rem;
+  position: relative;
+  cursor: pointer;
+  margin-left: 25px;
+}
+
+.notification .logout-icon::after {
+  content: '3'; /* Example: Notification count */
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 5px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.confirm-button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirm-button:hover {
+  background-color: #218838;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
+}
+
+.notification p {
+  margin: 5px 0;
+}
+
+.notification .time {
+  color: #888;
+  font-size: 0.9em;
+}
+
+.content-section { 
+  display: none; 
+}
+
+/* Main Content Styles */
+main {
+  padding: 1rem 20px;
+  padding-bottom: 100px;
+}
+
+.content-section {
+  display: none;
+}
+
+.content-section:first-child {
+  display: block;
+}
+
+.menu-management, .inventory-management {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-header, .inventory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.menu-item, .inventory-item, .order {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-details {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-item img.item-image, .inventory-item img.item-image, .item-details {
+  width: 100px; 
+  height: auto; 
+  margin-right: 10px; 
+} 
+
+.menu-item .item-details, .inventory-item .item-details, .order .order-details, .item-details { 
+  flex-grow: 1; 
+} 
+
+.menu-item h3, .inventory-item h3, .order h3, .item-details h3 { 
+  margin: 0; 
+} 
+
+.menu-item p, .inventory-item p, .order p, .item-details p { 
+  margin: 0 10px; 
+}
+
+.availability, .inventory-status, .status, .payment-status, .delete-item-btn {
+  padding: 0.5rem 0.5rem; 
+  border-radius: 5px; 
+  font-size: 1rem;  
+  cursor: pointer; 
+  border: none; 
+  color: #fff; 
+  transition: background-color 0.3s; 
+} 
+
+.available { 
+  background-color: green; 
+} 
+
+.not-available { 
+  background-color: red; 
+} 
+
+.inventory-status.high { 
+  background-color: green; 
+} 
+
+.inventory-status.low { 
+  background-color: red; 
+} 
+
+.edit-btn, .edit-stocks-btn { 
+  background-color: #007bff; 
+  color: #fff; 
+  padding: 5px 10px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+} 
+
+.edit-btn:hover, .edit-stocks-btn:hover { 
+  background-color: #0056b3; 
+}
+
+/* Styling for Status Buttons */ 
+.status { 
+  padding: 0.5rem 0.5rem; 
+  border-radius: 5px; 
+  font-size: 1rem; 
+  margin-top: 10px; 
+  cursor: pointer; 
+  border: none; 
+  color: #fff; 
+  transition: background-color 0.3s; 
+} 
+
+.preparing { 
+  background-color: orange; 
+} 
+
+.ready { 
+  background-color: green; 
+} 
+
+.claimed { 
+  background-color: blue;
+}
+
+/* Styling for Payment Status Buttons */
+.payment-status {
+  background-color: #dc3545; /* Default to not-paid */
+  color: white;
+}
+
+.paid {
+  background-color: #28a745;
+}
+
+.not-paid {
+  background-color: #dc3545;
+}
+
+/* Styling for Add Item Button */
+.add-item-btn, .edit-stocks-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-item-btn:hover, .edit-stocks-btn:hover {
+  background-color: #218838;
+}
+
+.delete-item-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #a72828;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-item-btn:hover {
+  background-color: #882121;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.close-btn, .close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-btn:hover, .close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="url"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.form-buttons button {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background-color: #d32f2f;
+}
+
+.submit-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}
+
+/* Styling for Inventory Status Buttons */
+.inventory-status.high {
+  background-color: rgb(4, 189, 4);
+}
+
+.inventory-status.low {
+  background-color: rgb(173, 0, 0);
+}
+
+footer {
+  background-color: #800000;
+  color: #fff;
+  text-align: center;
+  padding: 0.5rem 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}

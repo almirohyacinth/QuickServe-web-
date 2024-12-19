@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickServe - University of Batangas</title>
+    <link rel="stylesheet" href="vendorStyles.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <h1>QuickServe: Vendor Dashboard</h1>
+            <div class="notification">
+                <span id="notificationBell" class="bell-icon">🔔</span>
+                <span id="logoutIcon" class="logout-icon">🚪</span> <!-- Logout icon -->
+            </div>
+        </div>
+    </header>
+
+    <div class="nav-buttons">
+        <button class="button" onclick="showSection('orders')">Orders</button>
+        <button class="button" onclick="showSection('menu')">Menu</button>
+        <button class="button" onclick="showSection('inventory')">Inventory</button>
+    </div>
+
+    <main>
+        <section id="orders" class="content-section">
+            <h2>New Orders</h2>
+            <div class="order">
+                <h3>Order #002</h3>
+                <p>Customer: Tintin Mae Dolor</p>
+                <p>Item: Cheese Burger</p>
+                <button class="payment-status not-paid" onclick="togglePaymentStatus(this)">Not Paid</button>
+                <button class="status preparing">Preparing</button>
+            </div>
+        </section>
+
+        <section id="menu" class="content-section" style="display: none;">
+            <div class="menu-header">
+                <h2>Menu Management</h2>
+                <button class="add-item-btn">Add Item</button> <!-- Add Item button aligned with the header -->
+            </div>
+        </section>
+
+        <section id="inventory" class="content-section" style="display: none;"> 
+            <div class="inventory-header"> 
+                <h2>Inventory Management</h2> 
+                <button class="edit-stocks-btn">Edit Stocks</button> 
+            </div> 
+            <!-- Inventory Items here -->
+        </section>
+
+        <section id="notifications" class="content-section" style="display: none;">
+            <h2>Notifications</h2>
+            <div class="notification-container">
+                <div class="notification">
+                    <div class="notification-details">
+                        <div class="details">
+                            <p><strong>New Order</strong></p>
+                            <p>Order #001: Churros | ₱35.00</p>
+                            <p class="time">3 seconds ago</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="notification">
+                    <p><strong>Order Claimed</strong></p>
+                    <p>Order #002: Cheese Burger | ₱50.00 is already claimed by the customer</p>
+                    <p class="time">5 minutes ago</p>
+                </div>
+            </div>
+        </section>        
+    </main>
+
+    <div class="modal" id="addItemModal" style="display: none;"> 
+        <div class="modal-content"> 
+            <span class="close-btn">&times;</span> 
+            <h2>Add New Item</h2> 
+            <form id="addItemForm"> 
+                <label for="itemName">Item Name:</label> 
+                <input type="text" id="itemName" name="itemName" required> 
+
+                <label for="itemPrice">Price (₱):</label> 
+                <input type="number" id="itemPrice" name="itemPrice" required> 
+
+                <label for="itemImage">Image URL:</label> 
+                <input type="url" id="itemImage" name="itemImage"> 
+
+                <div class="form-buttons"> <button type="button" class="cancel-btn">Cancel</button> 
+                    <button type="submit" class="submit-btn">Add Item</button> 
+                </div> 
+            </form> 
+        </div> 
+    </div>
+
+    <div class="modal" id="editStocksModal" style="display: none;"> 
+        <div class="modal-content"> 
+            <span class="close-btn">&times;</span> 
+            <h2>Edit Stocks</h2> 
+            <form id="editStocksForm"> 
+                <label for="stkItemName">Item Name:</label> 
+                <input type="text" id="stkItemName" name="stkItemName" required> 
+                
+                <label for="newStocks">Stocks:</label> 
+                <input type="number" id="newStocks" name="newStocks" required> 
+
+                <label for="itemImage">Image URL:</label> 
+                <input type="url" id="itemImage" name="itemImage">
+                
+                <div class="form-buttons"> <button type="button" class="cancel-btn">Cancel</button> 
+                    <button type="submit" class="submit-btn">Update Stock</button> 
+                </div> 
+            </form> 
+        </div> 
+    </div>
+
+    <footer>
+        <p>&copy; 2024 QuickServe. All rights reserved.</p>
+    </footer>
+
+    <script src="vendorScript.js"></script>
+</body>
+</html>

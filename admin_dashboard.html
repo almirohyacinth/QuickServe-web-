@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickServe Admin Dashboard</title>
+    <link rel="stylesheet" href="adminStyles.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <h1>QuickServe: Admin Dashboard</h1>
+            <div class="notification">
+                <span id="notificationBell" class="bell-icon">🔔</span>
+                <span id="logoutIcon" class="logout-icon">🚪</span> <!-- Logout icon -->
+            </div>
+        </div>
+    </header>
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button class="button" onclick="showSection('overview')">Overview</button>
+            <button class="button" onclick="showSection('users')">Customers</button>
+            <button class="button" onclick="showSection('orders')">Orders</button>
+            <button class="button" onclick="showSection('products')">Products</button>
+        </div>
+    <main>
+        <!-- Overview Section -->
+        <section class="dashboard-section" id="overview">
+            <h2>Overview</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Total Customers</h3>
+                    <p>8</p>
+                </div>
+                <div class="card">
+                    <h3>Total Revenue</h3>
+                    <p>₱125.00</p>
+                </div>
+                <div class="card">
+                    <h3>Active Vendors</h3>
+                    <p>3</p>
+                </div>
+                <div class="card">
+                    <h3>Total Orders</h3>
+                    <p>5</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Table -->
+        <section class="dashboard-section" id="users">
+            <h2>Users</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hyacinth Louisse Almiro</td>
+                        <td>2201956@ub.edu.ph</td>
+                        <td>Customer</td>
+                    </tr>
+                    <tr>
+                        <td>Justine Mae Dolor</td>
+                        <td>2102033@ub.edu.ph</td>
+                        <td>Customer</td>
+                    </tr>
+                    <tr>
+                        <td>Maria Santos</td>
+                        <td>1452</td>
+                        <td>Vendor</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Product Section -->
+        <section class="dashboard-section" id="products">
+            <h2>Products</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Churros</td>
+                        <td>₱35.00</td>
+                    </tr>
+                    <tr>
+                        <td>Siomai Rice</td>
+                        <td>₱70.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Active Orders Section -->
+        <section class="dashboard-section" id="orders">
+            <h2>Active Orders</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order #</th>
+                        <th>Customer</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>Justine Mae Dolor</td>
+                        <td>Paid</td>
+                        <td>₱105.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="notifications" class="dashboard-section" style="display: none;">
+            <h2>Notifications</h2>
+            <div class="notification-container">
+                <div class="notification">
+                    <div class="notification-details">
+                        <div class="details">
+                            <p><strong>New Order</strong></p>
+                            <p>Order #001: Churros | ₱35.00</p>
+                            <p class="time">3 seconds ago</p>
+                        </div>
+                        <button class="confirm-button" onclick="confirmPayment(this)">Confirm Payment</button>
+                    </div>
+                </div>
+                <div class="notification">
+                    <p><strong>Order Claimed</strong></p>
+                    <p>Order #002: Cheese Burger | ₱50.00 is already claimed by the customer</p>
+                    <p class="time">5 minutes ago</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 QuickServe. All rights reserved.</p>
+    </footer>
+    
+    <script src="adminScript.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickServe</title>
+  <link rel="stylesheet" href="mainStyles.css">
+</head>
+<body>
+  <header>
+    <h1>QuickServe</h1>
+  </header>
+  
+  <main id="content">
+    <!-- Welcome Page -->
+    <div id="welcome">
+      <h2>Welcome to QuickServe</h2>
+      <button onclick="selectRole('vendor')">Vendor</button>
+      <button onclick="selectRole('admin')">Admin</button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm" style="display: none;" method="POST" action="process_login.php">
+      <h2 id="roleTitle"></h2>
+      <div id="formFields"></div>
+      <button type="submit">Proceed to Dashboard</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 QuickServe</p>
+  </footer>
+  
+  <script src="mainScript.js"></script>
+</body>
+</html>
